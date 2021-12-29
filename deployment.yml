@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: sudo01
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: sudo01-pod
   template:
     metadata:
       labels:
-        app: myapp
+        app: sudo01-pod
     spec:
       containers:
-      - name: myapp
-        image: <Image>
+      - name: sudo01-container
+        image: barclaysacr02.azurecr.io/sudo01:latest
         resources:
           limits:
             memory: "128Mi"
